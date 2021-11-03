@@ -1,8 +1,8 @@
 import allure
 import pytest
-from framework.check import check_created_response,\
+from framework_for_example.check import check_created_response,\
     check_bad_request, check_not_found
-from framework.jsonplaceholder_client import Client
+from framework_for_example.jsonplaceholder_client import Client
 
 
 @allure.suite('Post /post')
