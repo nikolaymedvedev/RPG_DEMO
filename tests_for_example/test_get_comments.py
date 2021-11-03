@@ -1,6 +1,6 @@
 import allure
-from framework.check import check_get_comments
-from framework.jsonplaceholder_client import Client
+from framework_for_example.check import check_get_comments
+from framework_for_example.jsonplaceholder_client import Client
 
 
 @allure.suite('GET /posts//comments')

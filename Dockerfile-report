@@ -1,9 +1,0 @@
-FROM node:12.8.1
-
-RUN apt-get update && apt-get install default-jdk -y
-RUN npm install -g allure-commandline
-
-COPY ./results /results
-
-ENTRYPOINT ["sleep"]
-CMD ["7200"]

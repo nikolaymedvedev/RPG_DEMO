@@ -1,6 +1,6 @@
 import allure
-from framework.check import check_get_all_posts_response
-from framework.jsonplaceholder_client import Client
+from framework_for_example.check import check_get_all_posts_response
+from framework_for_example.jsonplaceholder_client import Client
 
 
 @allure.suite('GET /posts')
