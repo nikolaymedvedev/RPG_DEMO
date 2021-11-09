@@ -1,0 +1,9 @@
+{
+  "authorization": {
+    "POSTGRES_DB": "goservice",
+    "POSTGRES_USER": "go_service_user",
+    "POSTGRES_PASSWORD": "DFJdjj!DK!FGTFd",
+    "POSTGRES_HOST": "10.10.15.185",
+    "POSTGRES_PORT": "5454"
+  }
+}
