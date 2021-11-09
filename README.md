@@ -9,6 +9,11 @@
 * Run all tests: "pytest tests/"
 * Run using pytest-xdist: "pytest -n <n>"
 
+## Allure reports:
+* Save test results in allure: "--alluredir=allure_report"
+* Clear allure results of previous test run: "--clean-alluredir"
+* Generate allure report: "allure serve allure_report/"
+
 ## MR's crating rules:
 * Template of MR's name, example: "TASK-1: Short changes descriptions"
 * Run artifacts: Screenshots of test's runs
