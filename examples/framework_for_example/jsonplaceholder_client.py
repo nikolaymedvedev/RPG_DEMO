@@ -1,6 +1,6 @@
 import allure
 import requests as r
-from config import JSONPLACEHOLDER_HOST
+from configs.config import JSONPLACEHOLDER_HOST
 
 
 class Client:

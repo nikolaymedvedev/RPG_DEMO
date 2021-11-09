@@ -10,13 +10,8 @@ __pycache__/
 .pytest_cache/
 
 # logs
+logs/
 *.log
 
 # allure_report
 allure_report/
-
-#downloads
-downloads/
-
-#example tables
-tests/data/example.[csv, xls]

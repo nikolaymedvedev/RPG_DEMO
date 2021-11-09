@@ -1,6 +1,6 @@
 import pytest
-from framework_for_example.logging import Logging
-from framework_for_example.helper import gen
+from examples.framework_for_example.logging import Logging
+from examples.framework_for_example.helper import gen
 
 
 @pytest.fixture(scope='session', autouse=True)
