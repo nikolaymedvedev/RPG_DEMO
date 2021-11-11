@@ -6,7 +6,7 @@ from configs.config import get_data
 class Authorisation:
 
     def __init__(self):
-        self.base_url = get_data(file_name="app_config.json")["base_url"]
+        self.base_url = get_data(file_name="app_config.json")["base_url_authorization"]
 
     def create_user(self, user_data: dict = None):
         """
