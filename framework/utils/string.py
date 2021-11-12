@@ -2,7 +2,7 @@ import random
 from string import ascii_letters
 
 
-def get_random_string(email=False, password=False, website=False, linkedin=False):
+def get_random_string(email=False, password=False, website=False, linkedin=False) -> str:
     random_string = ''
     for _ in range(random.randint(6, 12)):
         random_string += random.choice(ascii_letters)

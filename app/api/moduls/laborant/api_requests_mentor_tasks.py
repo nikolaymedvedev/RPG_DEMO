@@ -1,11 +1,12 @@
 from framework.api.api_requests import get, post, put, delete
 from configs.config import get_data
+from framework.utils.string import get_random_string
 
 
 class MentorTasks:
 
     def __init__(self):
-        self.base_url = get_data(file_name="app_config.json")["base_url_trainee"]
+        self.base_url = get_data(file_name="app_config.json")["base_url_laborant"]
         self.mentor_tasks_url = "/api/v1/directions/weeks/mentor_tasks"
 
     def get_all_mentor_tasks(self, skip: int = 1, limit: int = 100):
@@ -17,7 +18,7 @@ class MentorTasks:
         response = get(url=f"{self.base_url}{self.mentor_tasks_url}?skip={skip}&limit={limit}")
         return response
 
-    def create_mentor_task(self, description: str, week_id: int):
+    def create_mentor_task(self, week_id: int, description: str = get_random_string()):
         """
         :param week_id: the week id to create mentor task
         :param description: new mentor task description
@@ -39,7 +40,7 @@ class MentorTasks:
         response = get(url=f"{self.base_url}{self.mentor_tasks_url}{mentor_task_id}")
         return response
 
-    def update_mentor_task(self, mentor_task_id: int, description: str):
+    def update_mentor_task(self, mentor_task_id: int, description: str = get_random_string()):
         """
         :param description: description to update the mentor task
         :param mentor_task_id: the id of the mentor task

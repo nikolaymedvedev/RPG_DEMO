@@ -1,4 +1,4 @@
 {
   "base_url_authorization": "http://10.10.15.185:5000",
-  "base_url_trainee": "http://10.10.15.185:8000"
+  "base_url_laborant": "http://10.10.15.185:8000"
 }
