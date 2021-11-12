@@ -5,7 +5,7 @@ from configs.config import get_data
 class Weeks:
 
     def __init__(self):
-        self.base_url = get_data(file_name="app_config.json")["base_url_trainee"]
+        self.base_url = get_data(file_name="app_config.json")["base_url_laborant"]
         self.week_url = "/api/v1/directions/weeks/"
 
     def get_all_weeks(self, skip: int = 1, limit: int = 100):
