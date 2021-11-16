@@ -62,5 +62,5 @@ class Logger:
         try:
             self.logger.debug(f'res_body: {response.json()}')
         except JSONDecodeError:
-            self.logger.debug(f"Response without json_data")
+            self.logger.debug("Response without json_data")
         self.logger.info(f"{'*' * 50}" + '\n')
