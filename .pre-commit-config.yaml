@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: trailing-whitespace
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: requirements-txt-fixer
+
+  -   repo: https://gitlab.com/pycqa/flake8
+      rev: 3.7.9
+      hooks:
+        - id: flake8
+          language: system
+          types: [python]
+          args: ["--max-line-length=120",]

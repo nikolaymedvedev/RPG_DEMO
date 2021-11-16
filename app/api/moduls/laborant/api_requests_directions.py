@@ -2,6 +2,7 @@ from framework.api.api_requests import get, post, put, delete
 from configs.config import get_data
 from app.api.helpers.laborants import get_random_direction
 
+
 class Directions:
 
     def __init__(self):
@@ -43,7 +44,7 @@ class Directions:
         :return: requests.Response
         """
         data = get_random_direction()
-        if new_direction_title :
+        if new_direction_title:
             data.update(new_direction_title)
         response = put(url=f"{self.base_url}{self.directions_url}{direction_id}", json=data)
         return response
