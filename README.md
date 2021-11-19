@@ -9,8 +9,8 @@
 * Run all tests: "pytest tests/"
 * Run using pytest-xdist: "pytest -n <n>"
 
-## PRE-COMMIT
-* Run command: pre-commit install
+## Pre-commit:
+* Run command: "pre-commit install"
 * Now every time you commit your code, pre-commit will check
 for the rules described in the '.pre-commit-config.yaml' file
 * If you want to check you code without commit, run command: "pre-commit run --all-files"
