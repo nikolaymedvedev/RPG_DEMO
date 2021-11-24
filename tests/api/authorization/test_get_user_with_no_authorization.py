@@ -1,7 +1,7 @@
 import allure
 
 from app.api.helpers.users import create_random_user
-from app.api.moduls.authorization.steps import create_new_user, get_user_without_auth_token
+from app.api.modules.authorization.steps import create_new_user, get_user_without_auth_token
 
 
 @allure.title("Test get user with no authorization")

@@ -16,3 +16,6 @@ logs/
 
 # allure_report
 allure_report/
+
+# macOS files
+.DS_Store
