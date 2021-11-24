@@ -1,4 +1,4 @@
-from app.api.moduls.authorization.api_requests import Authorisation
+from app.api.modules.authorization.api_requests import Authorisation
 from framework.utils.checks import CommonCheckers
 
 
