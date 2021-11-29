@@ -1,6 +1,6 @@
 from framework.api.api_requests import get, post, put, delete
 from configs.config import get_data
-from framework.utils.string import get_random_string
+from framework.utils.strings import get_random_string
 
 
 class Literature:

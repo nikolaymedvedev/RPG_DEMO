@@ -39,6 +39,9 @@ class CommonCheckers:
     def check_status_code_401(self, response):
         self.check_status_code(response=response, expected_code=401)
 
+    def check_status_code_403(self, response):
+        self.check_status_code(response=response, expected_code=403)
+
     def check_status_code_404(self, response):
         self.check_status_code(response=response, expected_code=404)
 

@@ -32,10 +32,10 @@ def put(url: str, data: dict = None, json: dict = None):
         logger.error(msg=err)
 
 
-def delete(url: str, params: dict = None):
+def delete(url: str, params: dict = None, headers: dict = None):
     logger = Logger()
     try:
-        response = requests.delete(url=url, params=params)
+        response = requests.delete(url=url, params=params, headers=headers)
         logger.api(response=response)
         return response
     except ConnectionError as err:

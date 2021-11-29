@@ -2,9 +2,9 @@ import random
 from string import ascii_letters
 
 
-def get_random_string(email=False, password=False, website=False, linkedin=False) -> str:
+def get_random_string(email=False, password=False, website=False, linkedin=False, minimum_chars: int = 12) -> str:
     random_string = ''
-    for _ in range(random.randint(6, 12)):
+    for _ in range(random.randint(minimum_chars, 12)):
         random_string += random.choice(ascii_letters)
     if email:
         random_string += '@mail.com'
@@ -16,3 +16,9 @@ def get_random_string(email=False, password=False, website=False, linkedin=False
     if linkedin:
         random_string = f"https://www.linkedin.com/in/{get_random_string().lower()}"
     return random_string
+
+
+# random_string = ''
+# for _ in range(random.randint(6, 12)):
+#     random_string += random.choice(ascii_letters)
+# print(random_string)
