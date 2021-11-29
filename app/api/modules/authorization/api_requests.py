@@ -1,5 +1,5 @@
 from app.api.helpers.users import create_random_user
-from framework.api.api_requests import get, post
+from framework.api.api_requests import get, post, delete
 from configs.config import get_data
 
 
@@ -16,7 +16,7 @@ class Authorisation:
         data = create_random_user()
         if user_data:
             data.update(user_data)
-        response = post(url=f"{self.base_url}/api/v1/user/register", json=data)
+        response = post(url=f"{self.base_url}/api/v1/users/register", json=data)
         return response
 
     def authorisation(self, user_data: dict):
@@ -35,4 +35,11 @@ class Authorisation:
         """
         headers = {"Authorization": access_token}
         response = get(url=f"{self.base_url}/api/v1/test/hello/{username}", headers=headers)
+        return response
+
+    def delete_user_by_user_id(self, user_id, access_token: str = None):
+        headers = {
+            "Authorization": access_token
+        }
+        response = delete(url=f"{self.base_url}/api/v1/users/{user_id}", headers=headers)
         return response
