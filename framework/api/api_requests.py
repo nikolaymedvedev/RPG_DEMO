@@ -2,8 +2,10 @@ import requests
 from framework.logger.logger import Logger
 
 
+logger = Logger()
+
+
 def get(url: str, headers: dict = None):
-    logger = Logger()
     try:
         response = requests.get(url=url, headers=headers)
         logger.api(response=response)
@@ -13,7 +15,6 @@ def get(url: str, headers: dict = None):
 
 
 def post(url: str, data: dict = None, json: dict = None, files=None):
-    logger = Logger()
     try:
         response = requests.post(url=url, data=data, json=json, files=files)
         logger.api(response=response)
@@ -23,7 +24,6 @@ def post(url: str, data: dict = None, json: dict = None, files=None):
 
 
 def put(url: str, data: dict = None, json: dict = None):
-    logger = Logger()
     try:
         response = requests.put(url=url, data=data, json=json)
         logger.api(response=response)
@@ -33,7 +33,6 @@ def put(url: str, data: dict = None, json: dict = None):
 
 
 def delete(url: str, params: dict = None, headers: dict = None):
-    logger = Logger()
     try:
         response = requests.delete(url=url, params=params, headers=headers)
         logger.api(response=response)
