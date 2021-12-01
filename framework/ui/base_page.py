@@ -24,3 +24,9 @@ class BasePage:
             EC.presence_of_element_located((find_by, locator))
         )
         return button
+
+    def wait_for_url(self, url, timeout=15):
+        button = WebDriverWait(self.browser, timeout).until(
+            EC.url_to_be(url)
+        )
+        return button

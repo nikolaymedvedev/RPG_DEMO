@@ -29,20 +29,20 @@ class Authorization_page(BasePage):
             return False
         return True
 
+    def _clear_and_enter_text_to_field(self, locator: AuthorizationPageLocators(), text: str):
+        field = self.wait_element_located(*locator)
+        field.click()
+        field.send_keys(Keys.BACKSPACE * 100)
+        field.send_keys(text)
+
     def input_login(self, login: str):
-        login_field = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_LOGIN_FIELD)
-        login_field.click()
-        login_field.send_keys(Keys.BACKSPACE * 100)
-        login_field.send_keys(login)
+        self._clear_and_enter_text_to_field(AuthorizationPageLocators.LOCATOR_LOGIN_FIELD, login)
 
     def input_password(self, password: str):
-        password_field = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_PASSWORD_FIELD)
-        password_field.click()
-        password_field.send_keys(Keys.BACKSPACE * 100)
-        password_field.send_keys(password)
+        self._clear_and_enter_text_to_field(AuthorizationPageLocators.LOCATOR_PASSWORD_FIELD, password)
 
     def click_enter_button(self):
-        self.wait_element_clickable(*AuthorizationPageLocators.LOCATOR_ENTER_BUTTON).click()
+        return self.wait_element_clickable(*AuthorizationPageLocators.LOCATOR_ENTER_BUTTON).click()
 
     def _required_alert_exist(self, alert_locator):
         try:
