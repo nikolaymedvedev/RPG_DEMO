@@ -19,3 +19,6 @@ allure_report/
 
 # macOS files
 .DS_Store
+
+#webdriver
+*.exe

@@ -25,6 +25,12 @@ class BasePage:
         )
         return button
 
+    def wait_elements_located(self, find_by, locator, timeout=15):
+        buttons = WebDriverWait(self.browser, timeout).until(
+            EC.presence_of_all_elements_located((find_by, locator))
+        )
+        return buttons
+
     def wait_for_url(self, url, timeout=15):
         button = WebDriverWait(self.browser, timeout).until(
             EC.url_to_be(url)

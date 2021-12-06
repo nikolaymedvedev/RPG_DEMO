@@ -66,3 +66,32 @@ class Authorization_page(BasePage):
     def check_alert_login_length(self):
         alert_exist = self._required_alert_exist(AuthorizationPageLocators.LOCATOR_ALERT_PASSWORD_LENGTH)
         asserts.assert_true(alert_exist, "No alert 'Пароль должен содержать 12 символов' for login field")
+
+    def click_on_link_button(self):
+        link = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_BUTTON_LINK)
+        link.click()
+
+    def check_input_fields(self):
+        fields = self.wait_elements_located(*AuthorizationPageLocators.LOCATOR_INPUT_FIELDS)
+        asserts.assert_equal(len(fields), 2, "One of the two fields is missing")
+
+    def check_authorization_button(self):
+        buttons = self.wait_elements_located(*AuthorizationPageLocators.LOCATOR_CHECK_BUTTON)
+        asserts.assert_equal(len(buttons), 1, "There are more buttons than expected")
+
+    def check_forgot_password_button(self):
+        link_buttons = self.wait_elements_located(*AuthorizationPageLocators. LOCATOR_BUTTON_LINK)
+        asserts.assert_equal(len(link_buttons), 1, "There are more buttons than expected")
+
+    def check_text_in_forgot_password_button(self):
+        link = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_BUTTON_LINK)
+        asserts.assert_equal(link.text, "Забыли пароль?", "The text does not mach the link")
+
+    def check_heading_after_click_on_forgot_password_button(self):
+        forgot_link = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_BUTTON_LINK_HEADING)
+        asserts.assert_equal(forgot_link.text, "Обратитесь к Администратору", "The text does not match the link")
+
+    def check_field_after_click_on_forgot_password_button(self):
+        massage = "Для востановления логина и пароля обратитесь к системному администратору"
+        field = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_BUTTON_LINK_FIELD).text
+        asserts.assert_equal(field, massage, "There are changes in the field")
