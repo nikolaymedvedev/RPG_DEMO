@@ -1,6 +1,8 @@
 import pytest
 from framework.logger.logger import Logger
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 
 
 @pytest.fixture(scope="session")
@@ -10,8 +12,20 @@ def logger():
 
 
 @pytest.fixture()
-def open_browser_chrome():
-    browser = webdriver.Chrome()
+def open_browser_chrome(scope="function"):
+    option = webdriver.ChromeOptions()
+    option.headless = True
+    browser = webdriver.Chrome(options=None, executable_path=ChromeDriverManager().install())
+    browser.implicitly_wait(10)
+    yield browser
+    browser.quit()
+
+
+@pytest.fixture(scope="function")
+def open_browser_firefox():
+    option = webdriver.FirefoxOptions()
+    option.headless = True
+    browser = webdriver.Firefox(options=None, executable_path=GeckoDriverManager().install())
     browser.implicitly_wait(10)
     yield browser
     browser.quit()
