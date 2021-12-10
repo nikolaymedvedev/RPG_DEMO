@@ -64,3 +64,7 @@ class laboratoryAssistantOfficePageLocators:
     LOCATOR_ASSISTANT_HIDDEN_MENU_BUTTON = (By.XPATH, "/html/body/div[1]/div/div[1]/div[2]/img")
     LOCATOR_ASSISTANT_NOTIFICATIONS = (By.XPATH, "//div/div[1]/div[3]/a/img")
     LOCATOR_ASSISTANT_EXIT_BUTTON = (By.XPATH, "//div/div[1]/div[3]/div[1]/img")
+    LOCATOR_ASSISTANT_HIDDEN_EXIT_BUTTON = (By.XPATH, "//div[3]/div[2]/div")
+    LOCATOR_EXIT_CONFIRMATION_BUTTON = (By.XPATH, "//../div[2]/button[2]")
+    LOCATOR_EXIT_DENIAL_BUTTON = (By.XPATH, "//../div[2]/button[1]")
+    LOCATOR_EXIT_WARNING = (By.XPATH, "//div[1]/div[3]/div[3]/div/div[1]/p")
