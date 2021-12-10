@@ -13,5 +13,3 @@ def test_checking_for_the_presence_of_elements_on_the_page(open_browser_chrome, 
         lab_page.clik_on_exit_button_in_the_hidden_menu()
         lab_page.click_enter_exit_button()
         lab_page.checking_the_exit_warning()
-
-

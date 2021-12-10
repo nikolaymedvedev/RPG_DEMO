@@ -16,5 +16,3 @@ def test_checking_for_the_presence_of_elements_on_the_page(open_browser_chrome, 
 
     with allure.step("We check the exit from the cabinet by searching for registration fields"):
         lab_page.check_input_fields()
-
-
