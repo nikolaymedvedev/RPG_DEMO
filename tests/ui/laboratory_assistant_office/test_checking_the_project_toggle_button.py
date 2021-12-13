@@ -1,5 +1,3 @@
-import time
-
 import allure
 from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaboratoryAssistantOffice
 
