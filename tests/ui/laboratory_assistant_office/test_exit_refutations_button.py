@@ -10,7 +10,7 @@ def test_checking_for_the_presence_of_elements_on_the_page(open_browser_chrome, 
         lab_page.login_to_the_page()
 
     with allure.step("We leave the laboratory assistant's office"):
-        lab_page.clik_on_exit_button_in_the_hidden_menu()
+        lab_page.click_on_exit_button_in_the_hidden_menu()
         lab_page.click_enter_exit_button()
         lab_page.click_on_the_exit_denial_button()
 
