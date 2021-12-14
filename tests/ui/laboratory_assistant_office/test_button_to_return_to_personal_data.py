@@ -1,9 +1,9 @@
 import allure
-from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaboratoryAssistantOffice
+from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaborantOffice
 
 
 def test_checking_the_hidden_menu_button_return_to_the_personal_account_page(open_browser_chrome, logger):
-    lab_page = LaboratoryAssistantOffice(open_browser_chrome, LaboratoryAssistantOffice.authorization_url)
+    lab_page = LaborantOffice(open_browser_chrome, LaborantOffice.authorization_url)
     lab_page.open()
 
     with allure.step("We log in on behalf of the laboratory assistant"):

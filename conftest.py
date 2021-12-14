@@ -1,11 +1,8 @@
-import multiprocessing
-
 import pytest
 from framework.logger.logger import Logger
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-
 
 @pytest.fixture(scope="session")
 def logger():
@@ -27,8 +24,8 @@ def open_browser_chrome(scope="function"):
 def open_browser_firefox():
     option = webdriver.FirefoxOptions()
     option.headless = True
-    option.set_capability()
     browser = webdriver.Firefox(options=None, executable_path=GeckoDriverManager().install())
+    browser.switch_to.alert
     browser.implicitly_wait(10)
     yield browser
     browser.quit()

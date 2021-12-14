@@ -1,10 +1,10 @@
 import pytest
-from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaboratoryAssistantOffice
+from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaborantOffice
 import allure
 
 
 def test_checking_for_the_presence_of_elements_on_the_page(open_browser_chrome, logger):
-    lab_page = LaboratoryAssistantOffice(open_browser_chrome, LaboratoryAssistantOffice.authorization_url)
+    lab_page = LaborantOffice(open_browser_chrome, LaborantOffice.authorization_url)
     lab_page.open()
 
     with allure.step("We log in on behalf of the laboratory assistant"):
