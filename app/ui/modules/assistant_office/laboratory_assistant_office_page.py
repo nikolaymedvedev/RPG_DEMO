@@ -115,11 +115,3 @@ class LaborantOffice(Authorization_page):
     def click_on_skype_link(self):
         skype = self.wait_element_located(*LaborantPageLocators.LOCATOR_LABORANT_SKYPE_LINK)
         skype.click()
-
-
-
-
-
-
-
-
