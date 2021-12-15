@@ -37,8 +37,19 @@ class LaborantPageLocators:
     LOCATOR_LABORANT_BUTTON_TIMESHEETS = (By.XPATH, "//div[2]/div[2]/div[2]/div[3]")
     LOCATOR_LABORANT_BUTTON_TASKS = (By.XPATH, "//div[2]/div[2]/div[2]/div[4]")
     LOCATOR_OF_THE_ELEMENTS_OF_THE_PROJECT_TOGGLE_BUTTON = (
-        By.CSS_SELECTOR, ".ProjectTableelements__ProjectHeader-sc-iv8bmm-3.KmPXG")
+        By.CSS_SELECTOR, ".ProjectTableelements__ProjectHeader-sc-iv8bmm-3.KmPXG"
+    )
     LOCATOR_LABORANT_SKYPE_LINK = (By.XPATH, "//div[1]/div/div[2]/div[3]/div[2]/a")
+    LOCATOR_NUMBER_OF_PARTICIPANTS = (By.XPATH, "//div/table/tbody/tr[2]/td[3]/p")
+    LOCATOR_COLUMN_NAME_OF_PARTICIPANTS = (By.XPATH, "//td[text()='ФИ']")
+    LOCATOR_NAMES_OF_PARTICIPANTS_IN_THE_PARTICIPANTS_COLUMN = (
+        By.CSS_SELECTOR, ".ProjectModalelements__ModalTableRow-sc-ovr6np-9.eskGTT"
+    )
+    LOCATOR_NAME_OF_THE_DIRECTIONS_COLUMN = (By.XPATH, "//td[text()='Направление']")
+    LOCATOR_NAME_OF_THE_DIRECTIONS_IN_THE_COLUMN = (
+        By.CSS_SELECTOR, ".ProjectModalelements__ModalTableRow-sc-ovr6np-9.eskGTT"
+    )
+
     """
     :: Locators of the table of the switchable element 'project'
     """

@@ -115,3 +115,20 @@ class LaborantOffice(Authorization_page):
     def click_on_skype_link(self):
         skype = self.wait_element_located(*LaborantPageLocators.LOCATOR_LABORANT_SKYPE_LINK)
         skype.click()
+
+    def click_enter_number_of_participants(self):
+        number = self.wait_element_located(*LaborantPageLocators.LOCATOR_NUMBER_OF_PARTICIPANTS)
+        number.click()
+
+    def check_column_name_of_participants(self):
+        self.wait_element_located(*LaborantPageLocators.LOCATOR_COLUMN_NAME_OF_PARTICIPANTS)
+
+    def checking_the_name_of_the_participants_field(self):
+        self.wait_element_located(*LaborantPageLocators.LOCATOR_NAME_OF_THE_DIRECTIONS_COLUMN)
+
+    def checking_the_names_of_project_participants(self):
+        names = self.wait_elements_located(
+            *LaborantPageLocators.LOCATOR_NAMES_OF_PARTICIPANTS_IN_THE_PARTICIPANTS_COLUMN
+        )
+        result = [i.text for i in names if len(i.text) > 0]
+        asserts.assert_greater(len(result), 0, "Directions and Names are not displayed")

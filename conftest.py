@@ -4,6 +4,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
+
 @pytest.fixture(scope="session")
 def logger():
     logger = Logger.get_logger()
@@ -11,7 +12,7 @@ def logger():
 
 
 @pytest.fixture()
-def open_browser_chrome(scope="function"):
+def open_browser_chrome(request):
     option = webdriver.ChromeOptions()
     option.headless = False
     browser = webdriver.Chrome(options=None, executable_path=ChromeDriverManager().install())
@@ -25,7 +26,6 @@ def open_browser_firefox():
     option = webdriver.FirefoxOptions()
     option.headless = True
     browser = webdriver.Firefox(options=None, executable_path=GeckoDriverManager().install())
-    browser.switch_to.alert
     browser.implicitly_wait(10)
     yield browser
     browser.quit()
