@@ -2,7 +2,7 @@ import allure
 from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaborantOffice
 
 
-def test_checking_the_operation_of_the_switch_button_project(open_browser_chrome, logger):
+def test_checking_and_viewing_other_laboratory_assistants_participating_in_the_project(open_browser_chrome, logger):
     lab_page = LaborantOffice(open_browser_chrome, LaborantOffice.authorization_url)
     lab_page.open()
 
