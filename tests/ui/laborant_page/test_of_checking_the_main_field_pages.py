@@ -1,5 +1,4 @@
-import pytest
-from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaborantOffice
+from app.ui.modules.laborant.laborant_page import LaborantOffice
 import allure
 
 

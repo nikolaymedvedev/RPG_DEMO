@@ -1,5 +1,6 @@
 import allure
-from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaborantOffice
+
+from app.ui.modules.laborant.laborant_page import LaborantOffice
 
 
 def test_checking_the_operation_of_the_switch_button_project(open_browser_chrome, logger):

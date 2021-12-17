@@ -1,5 +1,5 @@
 import allure
-from app.ui.modules.assistant_office.laboratory_assistant_office_page import LaborantOffice
+from app.ui.modules.laborant.laborant_page import LaborantOffice
 
 
 def test_checking_the_hidden_menu_button_return_to_the_personal_account_page(open_browser_chrome, logger):

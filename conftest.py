@@ -14,7 +14,7 @@ def logger():
 @pytest.fixture()
 def open_browser_chrome(request):
     option = webdriver.ChromeOptions()
-    option.headless = False
+    option.add_argument("--headless")
     browser = webdriver.Chrome(options=None, executable_path=ChromeDriverManager().install())
     browser.implicitly_wait(10)
     yield browser
@@ -24,7 +24,7 @@ def open_browser_chrome(request):
 @pytest.fixture(scope="function")
 def open_browser_firefox():
     option = webdriver.FirefoxOptions()
-    option.headless = True
+    option.add_argument("--headless")
     browser = webdriver.Firefox(options=None, executable_path=GeckoDriverManager().install())
     browser.implicitly_wait(10)
     yield browser

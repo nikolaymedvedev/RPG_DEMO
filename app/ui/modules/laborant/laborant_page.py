@@ -1,4 +1,4 @@
-from app.ui.helpers.locators_laboratory_assistant_page import LaborantPageLocators
+from app.ui.helpers.locators_laborant_page import LaborantPageLocators
 from app.ui.modules.authorization.authorization_page import Authorization_page
 from configs.base_users_for_ui_and_api_tests import base_laborant_user
 from framework.utils import asserts
