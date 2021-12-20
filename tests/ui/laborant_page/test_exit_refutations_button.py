@@ -2,7 +2,7 @@ import allure
 from app.ui.modules.laborant.laborant_page import LaborantOffice
 
 
-def test_checking_for_the_presence_of_elements_on_the_page(open_browser_chrome, logger):
+def test_checking_exit_refutations_button(open_browser_chrome, logger):
     lab_page = LaborantOffice(open_browser_chrome, LaborantOffice.authorization_url)
     lab_page.open()
 

@@ -12,7 +12,7 @@ def logger():
 
 
 @pytest.fixture()
-def open_browser_chrome(request):
+def open_browser_chrome(scope="function"):
     option = webdriver.ChromeOptions()
     option.add_argument("--headless")
     browser = webdriver.Chrome(options=None, executable_path=ChromeDriverManager().install())
