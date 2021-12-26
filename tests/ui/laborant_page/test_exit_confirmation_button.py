@@ -1,6 +1,8 @@
 import allure
 from app.ui.modules.laborant.laborant_page import LaborantOffice
 import time
+from framework.utils import asserts
+
 
 def test_checking_exit_confirmation_button(open_browser_chrome, logger):
     lab_page = LaborantOffice(open_browser_chrome, LaborantOffice.authorization_url)
@@ -16,7 +18,7 @@ def test_checking_exit_confirmation_button(open_browser_chrome, logger):
         time.sleep(1)
         lab_page.click_on_the_exit_confirmation_button()
         time.sleep(1)
-
-    with allure.step("We check the exit from the cabinet by searching for registration fields"):
-        lab_page.check_input_fields()
+    with allure.step("Checking the authorization page link"):
+        asserts.assert_true(lab_page.wait_for_url(LaborantOffice.authorization_url),
+                            "Not correct url opened")
         time.sleep(1)

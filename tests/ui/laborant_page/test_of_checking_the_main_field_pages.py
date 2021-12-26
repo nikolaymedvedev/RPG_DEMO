@@ -7,7 +7,7 @@ import allure
 def test_checking_for_the_presence_of_elements_on_the_page(open_browser_chrome, logger):
     lab_page = LaborantOffice(open_browser_chrome, LaborantOffice.authorization_url)
     lab_page.open()
-
+    time.sleep(1)
     with allure.step("We log in on behalf of the laboratory assistant"):
         lab_page.login_to_the_page()
         time.sleep(1)
