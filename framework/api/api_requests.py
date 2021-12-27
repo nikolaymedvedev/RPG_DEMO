@@ -14,9 +14,9 @@ def get(url: str, headers: dict = None):
         logger.error(msg=err)
 
 
-def post(url: str, data: dict = None, json: dict = None, files=None):
+def post(url: str, data: dict = None, json: dict = None, files=None, headers: dict = None):
     try:
-        response = requests.post(url=url, data=data, json=json, files=files)
+        response = requests.post(url=url, data=data, json=json, files=files, headers=headers)
         logger.api(response=response)
         return response
     except ConnectionError as err:
