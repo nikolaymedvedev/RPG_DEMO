@@ -9,6 +9,7 @@ def get_random_direction():
                                 "Graphic Design"])
     }
 
+
 def get_random_direction_name():
     return random.choice(["AQA", "QA", "JavaScript", "Java", "Scala", "PHP", "PHP Magento",
                                 ".NET", "Python", "Ruby", "GoLang", "iOS", "Android", "Business Analysis",

@@ -43,5 +43,3 @@ class Authorisation:
         }
         response = delete(url=f"{self.base_url}/api/v1/users/{user_id}", headers=headers)
         return response
-
-
