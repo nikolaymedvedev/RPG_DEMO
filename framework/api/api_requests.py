@@ -23,9 +23,9 @@ def post(url: str, data: dict = None, json: dict = None, files=None, headers: di
         logger.error(msg=err)
 
 
-def put(url: str, data: dict = None, json: dict = None):
+def put(url: str, data: dict = None, json: dict = None, headers: dict = None):
     try:
-        response = requests.put(url=url, data=data, json=json)
+        response = requests.put(url=url, data=data, json=json, headers=headers)
         logger.api(response=response)
         return response
     except ConnectionError as err:

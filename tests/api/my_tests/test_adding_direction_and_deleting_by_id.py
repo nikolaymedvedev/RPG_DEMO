@@ -5,6 +5,7 @@ from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 from framework.utils import asserts
 
 
+@allure.title("Test adding direction and deleting by id")
 def test_adding_direction_and_deleting_by_id(logger):
 
     with allure.step("Authorization coordinator/get token"):
