@@ -1,6 +1,7 @@
-from framework.api.api_requests import get, post, put, delete
+from framework.api.api_requests import get, post, delete
 from configs.config import get_data
-from app.api.helpers.laborants import get_random_direction, get_random_direction_name
+from app.api.helpers.laborants import get_random_direction_name
+
 
 class Directions:
 
@@ -44,7 +45,8 @@ class Directions:
         new_data = get_random_direction_name()
         if new_direction_name:
             new_data = new_direction_name
-        response = post(url=f"{self.base_url}{self.directions_url_update}{direction_id}", files={"name": (None, new_data)},
+        response = post(url=f"{self.base_url}{self.directions_url_update}{direction_id}",
+                        files={"name": (None, new_data)},
                         headers=headers)
         return response
 
