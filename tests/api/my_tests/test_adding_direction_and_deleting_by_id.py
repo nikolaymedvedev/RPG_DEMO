@@ -22,4 +22,3 @@ def test_adding_direction_and_deleting_by_id(logger):
         asserts.assert_equal(delete_direction.text, '"directions deleted"\n',
                              "It is not possible to delete a direction by id"
                              )
-

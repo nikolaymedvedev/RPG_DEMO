@@ -66,6 +66,13 @@ def create_direction(headers: dict, direction_name: str = None, ):
     return direction
 
 
+# create invalid direction
+def create_invalid_direction(headers: dict, direction_name: str = None, ):
+    direction = Directions().add_direction(headers=headers, direction_name=direction_name)
+    CommonCheckers().check_status_code_400(response=direction)
+    return direction
+
+
 # creating an existing direction
 def create_existing_direction(headers: dict, direction_name: str = None, ):
     existing_direction = Directions().add_direction(headers=headers, direction_name=direction_name)
