@@ -115,5 +115,3 @@ class Authorization_page(BasePage):
         self.text_to_be_present_in_element(*AuthorizationPageLocators.LOCATOR_EMAIL_FIELD_NAME,
                                            "Такой почты нет в системе"
                                            )
-
-

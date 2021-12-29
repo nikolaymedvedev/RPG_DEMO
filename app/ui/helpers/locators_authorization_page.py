@@ -23,5 +23,3 @@ class AuthorizationPageLocators:
     LOCATOR_CHECK_MAIL_INPUT_FIELD = (By.XPATH, "//input[@name='email']")
     LOCATOR_BUTTON_SEND_EMAIL = (By.XPATH, "//form/div/button")
     LOCATOR_EMAIL_FIELD_NAME = (By.CSS_SELECTOR, ".Inputelements__InputMessage-sc-1fyahir-7.fVxNmY")
-
-
