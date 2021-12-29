@@ -15,3 +15,13 @@ def test_button_forgot_password(open_browser_chrome, logger):
 
     with allure.step("Checking the message field after clicking on the link button"):
         auth_page.check_field_after_click_on_forgot_password_button()
+
+    with allure.step("Checking that the field is required"):
+        auth_page.click_button_send_email_button()
+        auth_page.checking_the_required_field()
+
+    with allure.step("Checking sending invalid mail"):
+        auth_page.check_mail_input_field()
+        auth_page.input_text_in_mail_field("invalid")
+        auth_page.click_button_send_email_button()
+        auth_page.checking_sending_invalid_mail()

@@ -89,9 +89,31 @@ class Authorization_page(BasePage):
 
     def check_heading_after_click_on_forgot_password_button(self):
         forgot_link = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_BUTTON_LINK_HEADING)
-        asserts.assert_equal(forgot_link.text, "Обратитесь к Администратору", "The text does not match the link")
+        asserts.assert_equal(forgot_link.text, "Восстановление доступа", "The text does not match the link")
 
     def check_field_after_click_on_forgot_password_button(self):
-        massage = "Для востановления логина и пароля обратитесь к системному администратору"
+        massage = "Электронная почта"
         field = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_BUTTON_LINK_FIELD).text
         asserts.assert_equal(field, massage, "There are changes in the field")
+
+    def check_mail_input_field(self):
+        mail_field = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_CHECK_MAIL_INPUT_FIELD)
+        mail_field.click()
+        return mail_field
+
+    def input_text_in_mail_field(self, massage):
+        self.check_mail_input_field().send_keys(massage)
+
+    def click_button_send_email_button(self):
+        self.wait_element_located(*AuthorizationPageLocators.LOCATOR_BUTTON_SEND_EMAIL).click()
+
+    def checking_the_required_field(self):
+        assert_text = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_EMAIL_FIELD_NAME)
+        asserts.assert_equal(assert_text.text, "Обязательное поле", "Required field label not found")
+
+    def checking_sending_invalid_mail(self):
+        self.text_to_be_present_in_element(*AuthorizationPageLocators.LOCATOR_EMAIL_FIELD_NAME,
+                                           "Такой почты нет в системе"
+                                           )
+
+

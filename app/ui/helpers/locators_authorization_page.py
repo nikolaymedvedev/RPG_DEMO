@@ -16,7 +16,12 @@ class AuthorizationPageLocators:
     LOCATOR_ALERT_PASSWORD_LENGTH = (By.XPATH, "//div/span[2][text()='Пароль должен содержать 12 символов']")
 
     LOCATOR_INPUT_FIELDS = (By.TAG_NAME, "input")
-    LOCATOR_BUTTON_LINK = (By.XPATH, "//div/div[2]/form/span")
-    LOCATOR_BUTTON_LINK_HEADING = (By.XPATH, "//form/div[3]/div/h2")
-    LOCATOR_BUTTON_LINK_FIELD = (By.XPATH, "//form/div[3]/div/p")
+    LOCATOR_BUTTON_LINK = (By.XPATH, "//form/div[3]/span")
+    LOCATOR_BUTTON_LINK_HEADING = (By.XPATH, "//form/div/h2")
+    LOCATOR_BUTTON_LINK_FIELD = (By.XPATH, "//div/div[2]/label")
     LOCATOR_CHECK_BUTTON = (By.TAG_NAME, "button")
+    LOCATOR_CHECK_MAIL_INPUT_FIELD = (By.XPATH, "//input[@name='email']")
+    LOCATOR_BUTTON_SEND_EMAIL = (By.XPATH, "//form/div/button")
+    LOCATOR_EMAIL_FIELD_NAME = (By.CSS_SELECTOR, ".Inputelements__InputMessage-sc-1fyahir-7.fVxNmY")
+
+
