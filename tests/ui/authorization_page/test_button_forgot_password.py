@@ -25,3 +25,7 @@ def test_button_forgot_password(open_browser_chrome, logger):
         auth_page.input_text_in_mail_field("invalid")
         auth_page.click_button_send_email_button()
         auth_page.checking_sending_invalid_mail()
+
+    with allure.step("Checking that the window 'forgot password' has closed"):
+        auth_page.close_window_forgot_password()
+        auth_page.check_return_on_authorization_windows()

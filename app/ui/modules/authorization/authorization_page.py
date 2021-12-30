@@ -51,6 +51,9 @@ class Authorization_page(BasePage):
             return False
         return True
 
+    def update_authorization_page(self):
+        self.browser.refresh()
+
     def check_login_field_empty_alert(self):
         alert_exist = self._required_alert_exist(AuthorizationPageLocators.LOCATOR_ALERT_REQUIRED_FIELD_LOGIN)
         asserts.assert_true(alert_exist, "No alert 'Обязательное поле' for login field")
@@ -59,9 +62,13 @@ class Authorization_page(BasePage):
         alert_exist = self._required_alert_exist(AuthorizationPageLocators.LOCATOR_ALERT_REQUIRED_FIELD_PASSWORD)
         asserts.assert_true(alert_exist, "No alert 'Обязательное поле' for password field")
 
-    def check_alert_not_correct_login_or_password(self):
-        alert_exist = self._required_alert_exist(AuthorizationPageLocators.LOCATOR_ALERT_NOT_VALID_LOGIN_OR_PASSWORD)
-        asserts.assert_true(alert_exist, "No alert 'Неверные логин или пароль.'")
+    def check_alert_not_correct_login(self):
+        alert_login = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_ALERT_NOT_VALID_LOGIN)
+        asserts.assert_equal(alert_login.text, "Вы ввели неверный логин.", "No massage 'Вы ввели неверный логин'")
+
+    def check_alert_not_correct_password(self):
+        alert_password = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_ALERT_NOT_VALID_PASSWORD)
+        asserts.assert_equal(alert_password.text, "Вы ввели неверный пароль.", "No massage 'Вы ввели неверный пароль'")
 
     def check_alert_login_length(self):
         alert_exist = self._required_alert_exist(AuthorizationPageLocators.LOCATOR_ALERT_PASSWORD_LENGTH)
@@ -80,7 +87,7 @@ class Authorization_page(BasePage):
         asserts.assert_equal(len(buttons), 1, "There are more buttons than expected")
 
     def check_forgot_password_button(self):
-        link_buttons = self.wait_elements_located(*AuthorizationPageLocators. LOCATOR_BUTTON_LINK)
+        link_buttons = self.wait_elements_located(*AuthorizationPageLocators.LOCATOR_BUTTON_LINK)
         asserts.assert_equal(len(link_buttons), 1, "There are more buttons than expected")
 
     def check_text_in_forgot_password_button(self):
@@ -113,5 +120,12 @@ class Authorization_page(BasePage):
 
     def checking_sending_invalid_mail(self):
         self.text_to_be_present_in_element(*AuthorizationPageLocators.LOCATOR_EMAIL_FIELD_NAME,
-                                           "Такой почты нет в системе"
-                                           )
+                                           "Такой почты нет в системе")
+
+    def close_window_forgot_password(self):
+        cross = self.wait_element_located(*AuthorizationPageLocators.LOCATOR_CROSS_ON_WINDOW_FORGOT_PASSWORD)
+        cross.click()
+
+    def check_return_on_authorization_windows(self):
+        self.wait_element_located(*AuthorizationPageLocators.LOCATOR_LOGIN_FIELD).click()
+        self.wait_element_located(*AuthorizationPageLocators.LOCATOR_PASSWORD_FIELD).click()

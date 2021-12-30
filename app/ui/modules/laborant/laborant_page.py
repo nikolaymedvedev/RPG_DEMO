@@ -54,6 +54,10 @@ class LaborantOffice(Authorization_page):
         confirmation_button = self.wait_element_located(*LaborantPageLocators.LOCATOR_EXIT_CONFIRMATION_BUTTON)
         confirmation_button.click()
 
+    def check_exit_from_the_cabinet(self):
+        asserts.assert_true(self.wait_for_url(LaborantOffice.authorization_url),
+                            "Not correct url opened")
+
     def click_on_the_exit_denial_button(self):
         denial_button = self.wait_element_located(*LaborantPageLocators.LOCATOR_EXIT_DENIAL_BUTTON)
         denial_button.click()
