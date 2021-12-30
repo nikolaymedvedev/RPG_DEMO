@@ -11,6 +11,6 @@ def test_added_invalid_direction(logger):
         token = get_auth_token(coordinator).json()["token"]
 
     with allure.step("Added invalid direction"):
-        create_invalid_direction(direction_name="@&!**&!!!&@@!",
+        create_invalid_direction(direction_name="@&!**@@#&!!!&@@!",
                                  headers={"Authorization": token}
                                  )

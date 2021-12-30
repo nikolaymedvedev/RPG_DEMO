@@ -15,3 +15,7 @@ def get_random_direction_name():
                                 ".NET", "Python", "Ruby", "GoLang", "iOS", "Android", "Business Analysis",
                                 "System Analysis", "Data engineering", "Machine Learning", "UI/UX Design",
                                 "Graphic Design"])
+
+
+def get_random_number():
+    return random.choice(range(1, 999))

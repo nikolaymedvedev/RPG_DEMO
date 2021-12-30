@@ -1,5 +1,6 @@
 from app.api.modules.authorization.api_requests import Authorisation
 from app.api.modules.laborant.api_requests_directions import Directions
+from app.api.modules.laborant.api_requests_programs import Programs
 from framework.utils.checks import CommonCheckers
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 
@@ -102,3 +103,41 @@ def update_direction(direction_id: int, new_direction_name: str = None, headers:
                                                   )
     CommonCheckers().check_status_code_200(response=new_direction)
     return new_direction
+
+
+# we are reviewing all internship programs
+def get_all_programs(headers: dict = None):
+    programs = Programs().get_all_programs(headers=headers)
+    CommonCheckers().check_status_code_200(response=programs)
+    return programs
+
+
+# view the internship program by id
+def access_to_the_program_by_id(program_id: int, headers: dict = None):
+    program = Programs().get_program_by_id(program_id=program_id, headers=headers)
+    CommonCheckers().check_status_code_200(response=program)
+    return program
+
+
+# adding a new internship program
+def create_new_program(program_name: str = None, duration: int = None, testsQty: int = None, headers: dict = None):
+    program = Programs().add_program(program_name=program_name, duration=duration, testsQty=testsQty, headers=headers)
+    CommonCheckers().check_status_code_201(response=program)
+    return program
+
+
+# delete program by id
+def delete_program_by_id(program_id: int, headers: dict = None):
+    delete = Programs().delete_program_by_id(program_id=program_id, headers=headers)
+    CommonCheckers().check_status_code_200(response=delete)
+    return delete
+
+
+# updating internship program data
+def update_program(program_id: int, new_program_name: str = None, new_duration: int = None, new_testsQty: int = None,
+                   headers: dict = None):
+    update = Programs().update_program(program_id=program_id, new_program_name=new_program_name,
+                                       new_duration=new_duration, new_testsQty=new_testsQty, headers=headers)
+    CommonCheckers().check_status_code_200(response=update)
+    return update
+
