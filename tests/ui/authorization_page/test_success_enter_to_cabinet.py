@@ -15,8 +15,10 @@ coordinator_cabinet_url = get_data(file_name="browser_config.json")["base_url_co
 
 
 @pytest.mark.parametrize("role, username, password, url", [
-    ("mentor", base_mentor_user["username"], base_mentor_user["password"], mentor_cabinet_url),
-    ("laborant", base_laborant_user["username"], base_laborant_user["password"], laborant_cabinet_url)
+    pytest.param("mentor", base_mentor_user["username"], base_mentor_user["password"], mentor_cabinet_url,
+                 id="Mentor Authorization"),
+    pytest.param("laborant", base_laborant_user["username"], base_laborant_user["password"], laborant_cabinet_url,
+                 id="Laborant Authorization")
 ])
 def test_success_enter_to_cabinet(open_browser_chrome, logger, role, url, username, password):
     auth_page = Authorization_page(open_browser_chrome, Authorization_page.authorization_url)
