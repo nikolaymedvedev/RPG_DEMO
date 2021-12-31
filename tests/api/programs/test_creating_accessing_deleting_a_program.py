@@ -5,8 +5,8 @@ from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 from framework.utils import asserts
 
 
-@allure.title("Test adding an existing direction and deleting by name")
-def test_adding_an_existing_direction_and_deleting_by_name(logger):
+@allure.title("add new program, update program, view the program and delete program by id")
+def test_add_update_view_the_program_and_delete_by_id(logger):
 
     with allure.step("Authorization coordinator/get token"):
         coordinator = base_coordinator_user
@@ -33,8 +33,3 @@ def test_adding_an_existing_direction_and_deleting_by_name(logger):
         delete_program = delete_program_by_id(program_id=id_program,
                                               headers={"Authorization": token})
         print(delete_program.text)
-
-
-
-
-

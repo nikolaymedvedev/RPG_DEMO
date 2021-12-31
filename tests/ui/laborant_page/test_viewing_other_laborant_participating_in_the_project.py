@@ -9,18 +9,18 @@ def test_checking_and_viewing_other_laborant_participating_in_the_project(open_b
     time.sleep(1)
     with allure.step("We log in on behalf of the laboratory assistant"):
         lab_page.login_to_the_page()
-        time.sleep(1)
+
     with allure.step("Go to the project participants page"):
         lab_page.click_on_the_swich_button_project()
-        time.sleep(1)
+
         lab_page.click_enter_number_of_participants()
-        time.sleep(1)
+
     with allure.step("Checking the correctness of the column name 'Name'"):
         lab_page.check_column_name_of_participants()
-        time.sleep(1)
+
     with allure.step("Checking the correctness of the column name 'Directions'"):
         lab_page.checking_the_name_of_the_participants_field()
-        time.sleep(1)
+
     with allure.step("We check that the received list of directions and names is not empty"):
         lab_page.checking_the_names_of_project_participants()
-        time.sleep(1)
+

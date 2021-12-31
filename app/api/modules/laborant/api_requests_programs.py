@@ -7,6 +7,8 @@ class Programs:
 
     def __init__(self):
         self.base_url = get_data(file_name="browser_config.json")["base_url_programs"]
+        self.url_weeks_of_program = "/weeks/"
+        self.url_tasks_of_program = "/tasks/"
 
     def get_all_programs(self, headers: dict = None):
         """
@@ -83,3 +85,27 @@ class Programs:
         response = delete(url=f"{self.base_url}{program_id}/", headers=headers)
         return response
 
+    def get_all_weeks_of_program(self, program_id: int):
+        """
+        :param program_id: id program
+        :return: all weeks of the program
+        """
+        response = get(url=f"{self.base_url}{program_id}{self.url_weeks_of_program}")
+        return response
+
+    def get_all_tasks_of_program(self, program_id: int):
+        """
+        :param program_id: id program
+        :return: all tasks of the program
+        """
+        response = get(url=f"{self.base_url}{program_id}{self.url_tasks_of_program}")
+        return response
+
+    def get_week_by_program_id_and_number(self, program_id: int, week_number: int):
+        """
+        :param program_id: id program
+        :param week_number: the number of the week we want to watch
+        :return: A certain week by its number in a certain program
+        """
+        response = get(url=f"{self.base_url}{program_id}/{week_number}{self.url_weeks_of_program}")
+        return response
