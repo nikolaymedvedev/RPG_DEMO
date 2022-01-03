@@ -1,7 +1,7 @@
 import allure
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 from framework.utils import asserts
-from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.authorization.authorization_steps import get_auth_token
 from app.api.modules.directions.directions_steps import create_direction, create_existing_direction, \
     delete_direction_by_name
 

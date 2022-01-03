@@ -1,5 +1,5 @@
 import allure
-from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.authorization.authorization_steps import get_auth_token
 from app.api.modules.literature.literature_steps import add_literature, delete_literature
 from app.api.modules.programs.programs_steps import create_new_program, delete_program_by_id
 from app.api.modules.weeks.weeks_steps import add_week, get_all_literature_of_week, delete_week
@@ -48,7 +48,3 @@ def test_get_all_literature_of_week(logger):
                                         headers={"Authorization": token}
                                         )
         print(delete_p.text)
-
-
-
-

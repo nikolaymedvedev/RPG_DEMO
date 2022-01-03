@@ -1,5 +1,5 @@
 import allure
-from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.authorization.authorization_steps import get_auth_token
 from app.api.modules.programs.programs_steps import create_new_program, delete_program_by_id
 from app.api.modules.weeks.weeks_steps import add_week, get_week_by_id, update_week, delete_week
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
@@ -44,8 +44,3 @@ def test_add_view_and_update_week(logger):
                                               headers={"Authorization": token}
                                               )
         print(delete_program.text)
-
-
-
-
-

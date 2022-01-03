@@ -42,5 +42,3 @@ def delete_week(week_id: int, headers: dict = None):
     delete = Weeks().delete_week_by_id(week_id=week_id, headers=headers)
     CommonCheckers().check_status_code_200(response=delete)
     return delete
-
-

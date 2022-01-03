@@ -1,6 +1,4 @@
 from app.api.modules.authorization.api_requests_authorization import Authorisation
-from app.api.modules.tasks.api_requests_tasks import Tasks
-from app.api.modules.weeks.api_requests_weeks import Weeks
 from framework.utils.checks import CommonCheckers
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 

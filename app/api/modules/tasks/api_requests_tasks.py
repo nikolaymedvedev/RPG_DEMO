@@ -1,5 +1,5 @@
-from app.api.helpers.laborants import get_random_direction_name, get_random_number, get_title, get_description, \
-    get_deadline_date, get_random_priority, get_random_status
+from app.api.helpers.laborants import get_random_number, get_title, get_description, get_deadline_date,\
+    get_random_priority, get_random_status
 from framework.api.api_requests import get, post, put, delete
 from configs.config import get_data
 

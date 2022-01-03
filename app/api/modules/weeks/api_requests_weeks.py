@@ -61,9 +61,8 @@ class Weeks:
 
     def get_all_literature_of_week(self, week_id: int):
         """
-        :param week_id: id of the week 
+        :param week_id: id of the week
         :return: all literature of week
         """
         response = get(url=f"{self.base_url}week/{week_id}/literature")
         return response
-

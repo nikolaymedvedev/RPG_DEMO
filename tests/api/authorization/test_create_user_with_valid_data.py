@@ -1,7 +1,7 @@
 import allure
 
 from app.api.helpers.users import create_random_user
-from app.api.modules.authorization.steps import create_new_user, get_auth_token, get_user, \
+from app.api.modules.authorization.authorization_steps import create_new_user, get_auth_token, get_user, \
     authorize_not_register_user, delete_user
 from tests.test_data.data import username_already_exists_error_message
 

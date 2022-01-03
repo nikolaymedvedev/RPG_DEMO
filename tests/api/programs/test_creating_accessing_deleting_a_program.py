@@ -1,5 +1,5 @@
 import allure
-from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.authorization.authorization_steps import get_auth_token
 from app.api.modules.programs.programs_steps import create_new_program, update_program, access_to_the_program_by_id, \
     get_all_programs, delete_program_by_id
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
