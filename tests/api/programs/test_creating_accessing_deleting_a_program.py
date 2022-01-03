@@ -1,11 +1,12 @@
 import allure
-from app.api.modules.authorization.steps import get_auth_token, get_all_programs, create_new_program, \
-    delete_program_by_id, update_program, access_to_the_program_by_id
+from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.programs.programs_steps import create_new_program, update_program, access_to_the_program_by_id, \
+    get_all_programs, delete_program_by_id
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 from framework.utils import asserts
 
 
-@allure.title("add new program, update program, view the program and delete program by id")
+@allure.title("Add new program, update program, view the program and delete program by id")
 def test_add_update_view_the_program_and_delete_by_id(logger):
 
     with allure.step("Authorization coordinator/get token"):

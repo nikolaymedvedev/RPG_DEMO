@@ -1,8 +1,9 @@
 import allure
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 from framework.utils import asserts
-from app.api.modules.authorization.steps import get_auth_token, create_direction, delete_direction_by_name, \
-    create_existing_direction
+from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.directions.directions_steps import create_direction, create_existing_direction, \
+    delete_direction_by_name
 
 
 @allure.title("Test adding an existing direction and deleting by name")

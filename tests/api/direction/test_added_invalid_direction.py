@@ -1,5 +1,6 @@
 import allure
-from app.api.modules.authorization.steps import get_auth_token, create_invalid_direction
+from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.directions.directions_steps import create_invalid_direction
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 
 

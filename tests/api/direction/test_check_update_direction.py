@@ -1,9 +1,9 @@
 import allure
 from app.api.helpers.laborants import get_random_direction_name
+from app.api.modules.directions.directions_steps import create_direction, update_direction, delete_direction_by_name
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 from framework.utils import asserts
-from app.api.modules.authorization.steps import get_auth_token, create_direction, delete_direction_by_name, \
-    update_direction
+from app.api.modules.authorization.steps import get_auth_token
 
 
 @allure.title("Test checking the direction update")

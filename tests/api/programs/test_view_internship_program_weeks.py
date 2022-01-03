@@ -1,6 +1,8 @@
 import allure
-from app.api.modules.authorization.steps import create_new_program, get_auth_token, create_new_week, \
-    get_all_weeks_of_program, get_week_by_program_id_and_number, delete_week, delete_program_by_id
+from app.api.modules.authorization.steps import get_auth_token
+from app.api.modules.programs.programs_steps import create_new_program, create_new_week, get_all_weeks_of_program, \
+    get_week_by_program_id_and_number, delete_program_by_id
+from app.api.modules.weeks.weeks_steps import delete_week
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 
 

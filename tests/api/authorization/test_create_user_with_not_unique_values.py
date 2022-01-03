@@ -1,5 +1,4 @@
 import allure
-
 from app.api.helpers.users import create_random_user
 from app.api.modules.authorization.steps import create_new_user, \
     create_not_unique_new_user, delete_user, authorize_not_register_user

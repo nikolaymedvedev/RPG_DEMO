@@ -10,7 +10,7 @@ def get_random_direction_name():
 
 
 def get_random_number():
-    return random.choice(range(1, 999))
+    return random.choice(range(1, 100))
 
 
 def get_title():
