@@ -35,8 +35,6 @@ def test_get_all_tasks_of_week(logger):
         all_tasks_on_week = get_all_tasks_of_week(week_id=id_week)
         print(all_tasks_on_week.text)
 
-
-
     with allure.step("Delete new certain week by id"):
         delete_w = delete_week(week_id=id_week,
                                headers=None)

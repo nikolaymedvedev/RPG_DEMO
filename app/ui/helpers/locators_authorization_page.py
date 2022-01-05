@@ -3,8 +3,6 @@ from selenium.webdriver.common.by import By
 
 class AuthorizationPageLocators:
 
-    LOCATOR_AUTHORIZATION_PAGE_MAIN_MESSAGE = (By.XPATH, "//h2['Вход в систему']")
-
     LOCATOR_LOGIN_FIELD = (By.XPATH, "//input[@type='text' and @name='login']")
     LOCATOR_PASSWORD_FIELD = (By.XPATH, "//input[@type='password']")
     LOCATOR_UNCOVER_PASSWORD = (By.XPATH, "//input[@type='password']/../span")
@@ -21,9 +19,14 @@ class AuthorizationPageLocators:
     LOCATOR_BUTTON_LINK_HEADING = (By.XPATH, "//form/div/h2")
     LOCATOR_BUTTON_LINK_FIELD = (By.XPATH, "//div/div[2]/label")
     LOCATOR_CHECK_BUTTON = (By.TAG_NAME, "button")
+<<<<<<< HEAD
     LOCATOR_CHECK_MAIL_INPUT_FIELD = (By.XPATH, "//input[@name='email']")
     LOCATOR_BUTTON_SEND_EMAIL = (By.XPATH, "//form/div/button")
     LOCATOR_EMAIL_FIELD_NAME = (By.CSS_SELECTOR, ".Inputelements__InputMessage-sc-1fyahir-7.fVxNmY")
     LOCATOR_CROSS_ON_WINDOW_FORGOT_PASSWORD = (By.XPATH,
                                                "//div[@class='WhiteRectangleelements__SVGClose-sc-jonks8-3 hQMJid']"
                                                )
+=======
+
+
+>>>>>>> develop
