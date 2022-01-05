@@ -9,23 +9,23 @@ from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 @allure.title("Test get all tasks of week")
 def test_get_all_tasks_of_week(logger):
 
-    """with allure.step("Getting a Coordinator Token"):
+    with allure.step("Getting a Coordinator Token"):
         coordinator = base_coordinator_user
-        token = get_auth_token(coordinator).json()["token"]"""
+        token = get_auth_token(coordinator).json()["token"]
 
     with allure.step("Adding a new internship program"):
-        add_program = create_new_program(headers=None)
+        add_program = create_new_program(headers={"Authorization": token})
         id_program = add_program.json()["id"]
 
     with allure.step("Creating a new week"):
         week = add_week(week_number=1,
                         program_id=id_program,
-                        headers=None)
+                        headers={"Authorization": token})
         id_week = week.json()["id"]
 
     with allure.step("creating a new task"):
         new_task = create_new_task(weekID=id_week,
-                                   headers=None,
+                                   headers={"Authorization": token},
                                    priority="actual",
                                    status="to_do")
         id_task = new_task.json()["id"]
@@ -35,12 +35,17 @@ def test_get_all_tasks_of_week(logger):
         all_tasks_on_week = get_all_tasks_of_week(week_id=id_week)
         print(all_tasks_on_week.text)
 
+    with allure.step("delete adding task"):
+        delete = delete_new_task_by_id(task_id=id_task,
+                                       headers={"Authorization": token})
+        print(delete.text)
+
     with allure.step("Delete new certain week by id"):
         delete_w = delete_week(week_id=id_week,
-                               headers=None)
+                               headers={"Authorization": token})
         print(delete_w.text)
 
     with allure.step("Delete new certain program by id"):
         delete_p = delete_program_by_id(program_id=id_program,
-                                        headers=None)
+                                        headers={"Authorization": token})
         print(delete_p.text)
