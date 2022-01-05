@@ -4,6 +4,7 @@ from app.api.modules.literature.literature_steps import add_literature, delete_l
 from app.api.modules.programs.programs_steps import create_new_program, delete_program_by_id
 from app.api.modules.weeks.weeks_steps import add_week, get_all_literature_of_week, delete_week
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
+from framework.utils import asserts
 
 
 @allure.title("Test get all literature of week")
@@ -18,8 +19,7 @@ def test_get_all_literature_of_week(logger):
         id_program = add_program.json()["id"]
 
     with allure.step("Creating a new week"):
-        week = add_week(week_number=1,
-                        program_id=id_program,
+        week = add_week(program_id=id_program,
                         headers={"Authorization": token}
                         )
         id_week = week.json()["id"]
@@ -31,7 +31,7 @@ def test_get_all_literature_of_week(logger):
 
     with allure.step("view all literature of week"):
         all_literature_on_week = get_all_literature_of_week(week_id=id_week)
-        print(all_literature_on_week.text)
+        asserts.assert_greater(len(all_literature_on_week.text), 0, "The literature has not been created")
 
     with allure.step("Delete literature"):
         delete_l = delete_literature(literature_id=id_literature)

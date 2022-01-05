@@ -3,8 +3,8 @@ from framework.utils.checks import CommonCheckers
 
 
 # create new week
-def add_week(week_number: int, program_id: int, headers: dict = None):
-    week = Weeks().add_week(week_number=week_number, program_id=program_id, headers=headers)
+def add_week(program_id: int, week_number: int = 1, headers: dict = None):
+    week = Weeks().add_week(program_id=program_id, week_number=week_number, headers=headers)
     CommonCheckers().check_status_code_201(response=week)
     return week
 
@@ -17,8 +17,8 @@ def get_week_by_id(week_id: int):
 
 
 # update week
-def update_week(week_number: int, program_id: int):
-    new_week = Weeks().update_week(week_number=week_number, program_id=program_id)
+def update_week(week_id: int, program_id: int, week_number: int = 2):
+    new_week = Weeks().update_week(week_id=week_id, week_number=week_number, program_id=program_id)
     CommonCheckers().check_status_code_200(response=new_week)
     return new_week
 

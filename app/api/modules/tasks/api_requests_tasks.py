@@ -7,7 +7,8 @@ from configs.config import get_data
 class Tasks:
 
     def __init__(self):
-        self.base_url = get_data(file_name="browser_config.json")["base_url_tasks"]
+        self.base_url = get_data(file_name="app_config.json")["base_url_program_module"]
+        self.url_tasks = get_data(file_name="browser_config.json")["base_url_tasks"]
 
     def get_task_by_id(self, task_id: int, headers: dict = None):
         """
@@ -15,7 +16,7 @@ class Tasks:
         :param task_id: id task
         :return: requests.Response
         """
-        response = get(url=f"{self.base_url}{task_id}", headers=headers)
+        response = get(url=f"{self.base_url}{self.url_tasks}{task_id}", headers=headers)
         return response
 
     def create_task(self, weekID: int, title: str = None, description: str = None,
@@ -58,7 +59,7 @@ class Tasks:
                 "priority": f"{new_priority}",
                 "status": f"{new_status}"
             }
-        response = post(url=f"{self.base_url}",
+        response = post(url=f"{self.base_url}{self.url_tasks}",
                         json=data,
                         headers=headers)
         return response
@@ -104,7 +105,7 @@ class Tasks:
             "priority": f"{new_priority}",
             "status": f"{new_status}"
         }
-        response = put(url=f"{self.base_url}{task_id}",
+        response = put(url=f"{self.base_url}{self.url_tasks}{task_id}",
                        json=data,
                        headers=headers)
         return response
@@ -115,5 +116,5 @@ class Tasks:
         :param headers: request headers
         :return: requests.Response
         """
-        response = delete(url=f"{self.base_url}{task_id}", headers=headers)
+        response = delete(url=f"{self.base_url}{self.url_tasks}{task_id}", headers=headers)
         return response

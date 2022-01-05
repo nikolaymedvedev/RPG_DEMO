@@ -40,15 +40,15 @@ def update_program(program_id: int, new_program_name: str = None, new_duration: 
     return update
 
 
-# get all weeks of defined program
-def get_all_weeks_of_program(program_id: int, headers: dict = None):
+# get all tasks of defined program
+def get_all_tasks_of_program(program_id: int, headers: dict = None):
     weeks = Programs().get_all_tasks_of_program(program_id=program_id)
     CommonCheckers().check_status_code_200(response=weeks)
     return weeks
 
 
-# get all tasks of defined program
-def get_all_tasks_of_program(program_id: int):
+# get all weeks of defined program
+def get_all_weeks_of_program(program_id: int):
     tasks = Programs().get_all_weeks_of_program(program_id=program_id)
     CommonCheckers().check_status_code_200(response=tasks)
     return tasks
@@ -59,10 +59,3 @@ def get_week_by_program_id_and_number(program_id: int, week_number: int):
     week = Programs().get_week_by_program_id_and_number(program_id=program_id, week_number=week_number)
     CommonCheckers().check_status_code_200(response=week)
     return week
-
-
-# create new week for specific program id
-def create_new_week(week_number: int, program_id: int):
-    add_week = Weeks().add_week(week_number=week_number, program_id=program_id)
-    CommonCheckers().check_status_code_201(response=add_week)
-    return add_week

@@ -3,7 +3,7 @@ import datetime
 
 
 def get_random_direction_name():
-    return random.choice(["AQA", "QA", "JavaScript", "Java", "Scala", "PHP", "PHP Magento",
+    return random.choice(["AQA", "QA", "JavaScript", "Java", "PHP", "Scala", "PHP Magento",
                           ".NET", "Python", "Ruby", "GoLang", "iOS", "Android", "Business Analysis",
                           "System Analysis", "Data engineering", "Machine Learning", "UI/UX Design",
                           "Graphic Design"])
@@ -23,7 +23,7 @@ def get_description():
 
 def get_deadline_date():
     today = datetime.date.today()
-    tomorrow = today + datetime.timedelta(days=14)
+    tomorrow = today + datetime.timedelta(days=7)
     return str(tomorrow.strftime('%Y-%d-%m'))
 
 

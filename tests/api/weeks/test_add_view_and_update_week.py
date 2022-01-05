@@ -13,7 +13,8 @@ def test_add_view_and_update_week(logger):
         token = get_auth_token(coordinator).json()["token"]
 
     with allure.step("Adding a new internship program"):
-        add_program = create_new_program(headers={"Authorization": token})
+        add_program = create_new_program(headers={"Authorization": token}
+                                         )
         id_program = add_program.json()["id"]
 
     with allure.step("Add new week"):
@@ -24,23 +25,21 @@ def test_add_view_and_update_week(logger):
         id_week = week.json()["id"]
 
     with allure.step("View a specific week by id"):
-        view_week = get_week_by_id(week_id=id_week)
+        view_week = get_week_by_id(week_id=id_week
+                                   )
         print(view_week.text)
 
     with allure.step("Update week"):
-        new_week = update_week(week_number=1,
+        new_week = update_week(week_id=id_week,
                                program_id=id_program
                                )
-        print(new_week.text)
 
     with allure.step("Delete new week by id"):
         delete = delete_week(week_id=id_week,
                              headers={"Authorization": token}
                              )
-        print(delete.text)
 
     with allure.step("Delete a new internship program by id"):
         delete_program = delete_program_by_id(program_id=id_program,
                                               headers={"Authorization": token}
                                               )
-        print(delete_program.text)

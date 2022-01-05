@@ -6,7 +6,8 @@ from framework.utils.strings import get_random_string
 class Literature:
 
     def __init__(self):
-        self.base_url = get_data(file_name="browser_config.json")["base_url_literature"]
+        self.base_url = get_data(file_name="app_config.json")["base_url_program_module"]
+        self.url_literature = get_data(file_name="browser_config.json")["base_url_literature"]
 
     def get_all_literature(self, skip: int = 1, limit: int = 100):
         """
@@ -14,7 +15,7 @@ class Literature:
         :param limit: how many literature to show
         :return: requests.Response
         """
-        response = get(url=f"{self.base_url}")
+        response = get(url=f"{self.base_url}{self.url_literature}")
         return response
 
     def add_literature(self, week_id: int, literature_title: str = None):
@@ -30,7 +31,7 @@ class Literature:
             "title": title,
             "weekID": week_id
         }
-        response = post(url=f"{self.base_url}{self.literature_url}", json=data)
+        response = post(url=f"{self.base_url}{self.url_literature}", json=data)
         return response
 
     def get_literature_by_id(self, literature_id: int):
@@ -38,7 +39,7 @@ class Literature:
         :param literature_id: the id of the literature
         :return: requests.Response
         """
-        response = get(url=f"{self.base_url}{self.literature_url}{literature_id}")
+        response = get(url=f"{self.base_url}{self.url_literature}{literature_id}")
         return response
 
     def update_topic(self, literature_id: int, new_literature_title: get_random_string()):
@@ -50,7 +51,7 @@ class Literature:
         data = {
             "title": new_literature_title
         }
-        response = put(url=f"{self.base_url}{self.literature_url}{literature_id}", json=data)
+        response = put(url=f"{self.base_url}{self.url_literature}{literature_id}", json=data)
         return response
 
     def delete_literature(self, literature_id: int):
@@ -58,5 +59,5 @@ class Literature:
         :param literature_id: id of the literature
         :return: requests.Response
         """
-        response = delete(url=f"{self.base_url}{literature_id}")
+        response = delete(url=f"{self.base_url}{self.url_literature}{literature_id}")
         return response

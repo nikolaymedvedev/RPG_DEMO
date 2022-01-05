@@ -3,8 +3,7 @@
   "base_url_mentor_cabinet_page": "https://rpg-dev.andersenlab.com/cabinet/mentor/LC?tab=laborants",
   "base_url_coordinator_cabinet_page": "None",
   "base_url_laborant_cabinet_page": "https://rpg-dev.andersenlab.com/cabinet/laborant/LC",
-  "base_url_programs": "http://10.10.15.185:8015/api/v1/programs/",
-  "base_url_weeks": "http://10.10.15.185:8015/api/v1/weeks/",
-  "base_url_tasks": "http://10.10.15.185:8015/api/v1/tasks/",
-  "base_url_literature": "http://10.10.15.185:8015/api/v1/literature/"
+  "base_url_weeks": "/api/v1/weeks/",
+  "base_url_tasks": "/api/v1/tasks/",
+  "base_url_literature": "/api/v1/literature/"
 }

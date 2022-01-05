@@ -12,5 +12,5 @@ def add_literature(week_id: int, literature_title: str = None):
 # delete literature
 def delete_literature(literature_id: int):
     delete = Literature().delete_literature(literature_id=literature_id)
-    CommonCheckers().check_status_code_201(response=delete)
+    CommonCheckers().check_status_code_200(response=delete)
     return delete
