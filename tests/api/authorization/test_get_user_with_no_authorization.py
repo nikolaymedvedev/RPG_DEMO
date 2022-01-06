@@ -1,7 +1,6 @@
 import allure
-
 from app.api.helpers.users import create_random_user
-from app.api.modules.authorization.steps import create_new_user, get_user_without_auth_token, \
+from app.api.modules.authorization.authorization_steps import create_new_user, get_user_without_auth_token, \
     authorize_not_register_user, delete_user
 
 

@@ -2,6 +2,7 @@ import pytest
 from framework.logger.logger import Logger
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 
 
 @pytest.fixture(scope="session")
@@ -11,12 +12,17 @@ def logger():
 
 
 @pytest.fixture()
-def open_browser_chrome(request):
+def open_browser_chrome(scope="function"):
     option = webdriver.ChromeOptions()
-    option.headless = False
-    option.add_argument("start-maximized")
-    browser = webdriver.Chrome(options=option, executable_path=ChromeDriverManager().install())
+    option.add_argument("--headless")
+    browser = webdriver.Chrome(options=None, executable_path=ChromeDriverManager().install())
     browser.implicitly_wait(10)
     yield browser
     browser.quit()
 
+
+@pytest.fixture(scope="function")
+def open_browser_firefox():
+    option = webdriver.FirefoxOptions()
+    option.add_argument("--headless")
+    browser = webdriver.Firefox(options=None, executable_path=GeckoDriverManager().install())
