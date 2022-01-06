@@ -32,7 +32,7 @@ def get_description():
 
 def get_deadline_date():
     today = datetime.date.today()
-    tomorrow = today + datetime.timedelta(days=7)
+    tomorrow = today + datetime.timedelta(days=6)
     return str(tomorrow.strftime('%Y-%d-%m'))
 
 

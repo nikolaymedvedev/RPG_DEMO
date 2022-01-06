@@ -10,17 +10,17 @@ from framework.utils import asserts
 @allure.title("Test get all literature of week")
 def test_get_all_literature_of_week(logger):
 
-    with allure.step("Getting a Coordinator Token"):
+    """with allure.step("Getting a Coordinator Token"):
         coordinator = base_coordinator_user
-        token = get_auth_token(coordinator).json()["token"]
+        token = get_auth_token(coordinator).json()["token"]"""
 
     with allure.step("Adding a new internship program"):
-        add_program = create_new_program(headers={"Authorization": token})
+        add_program = create_new_program(headers=None)
         id_program = add_program.json()["id"]
 
     with allure.step("Creating a new week"):
         week = add_week(program_id=id_program,
-                        headers={"Authorization": token}
+                        headers=None
                         )
         id_week = week.json()["id"]
 
@@ -39,12 +39,12 @@ def test_get_all_literature_of_week(logger):
 
     with allure.step("Delete week"):
         delete_w = delete_week(week_id=id_week,
-                               headers={"Authorization": token}
+                               headers=None
                                )
         print(delete_w.text)
 
     with allure.step("Delete program"):
         delete_p = delete_program_by_id(program_id=id_program,
-                                        headers={"Authorization": token}
+                                        headers=None
                                         )
         print(delete_p.text)
