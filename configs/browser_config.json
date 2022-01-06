@@ -2,5 +2,8 @@
   "base_url_authorization_page": "https://rpg-dev.andersenlab.com/auth",
   "base_url_mentor_cabinet_page": "https://rpg-dev.andersenlab.com/cabinet/mentor/LC?tab=laborants",
   "base_url_coordinator_cabinet_page": "None",
-  "base_url_laborant_cabinet_page": "https://rpg-dev.andersenlab.com/cabinet/laborant/LC"
+  "base_url_laborant_cabinet_page": "https://rpg-dev.andersenlab.com/cabinet/laborant/LC",
+  "base_url_weeks": "/api/v1/weeks/",
+  "base_url_tasks": "/api/v1/tasks/",
+  "base_url_literature": "/api/v1/literature/"
 }

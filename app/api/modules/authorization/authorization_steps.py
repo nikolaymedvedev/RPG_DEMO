@@ -1,4 +1,4 @@
-from app.api.modules.authorization.api_requests import Authorisation
+from app.api.modules.authorization.api_requests_authorization import Authorisation
 from framework.utils.checks import CommonCheckers
 from configs.base_users_for_ui_and_api_tests import base_coordinator_user
 
