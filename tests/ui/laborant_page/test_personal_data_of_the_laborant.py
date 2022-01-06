@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 import time
 
+>>>>>>> 1248650c60219d60cc311f70d11ef625cc6e1ca1
+=======
+>>>>>>> ce01e640d418c36e549b5b8a4f02106d5c2d338c
 import allure
 from app.ui.modules.laborant.laborant_page import LaborantOffice
 

@@ -1,4 +1,3 @@
-import time
 import allure
 from app.ui.modules.laborant.laborant_page import LaborantOffice
 
@@ -23,4 +22,3 @@ def test_checking_and_viewing_other_laborant_participating_in_the_project(open_b
 
     with allure.step("We check that the received list of directions and names is not empty"):
         lab_page.checking_the_names_of_project_participants()
-

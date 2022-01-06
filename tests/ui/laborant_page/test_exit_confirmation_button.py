@@ -1,6 +1,5 @@
 import allure
 from app.ui.modules.laborant.laborant_page import LaborantOffice
-import time
 
 
 def test_checking_exit_confirmation_button(open_browser_chrome, logger):
