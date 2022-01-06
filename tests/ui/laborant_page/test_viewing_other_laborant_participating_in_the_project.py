@@ -1,4 +1,3 @@
-import time
 import allure
 from app.ui.modules.laborant.laborant_page import LaborantOffice
 

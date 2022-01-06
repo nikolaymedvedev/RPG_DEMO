@@ -1,11 +1,11 @@
 import allure
 from app.ui.modules.laborant.laborant_page import LaborantOffice
-import time
 
 
 def test_checking_exit_confirmation_button(open_browser_chrome, logger):
     lab_page = LaborantOffice(open_browser_chrome, LaborantOffice.authorization_url)
     lab_page.open()
+
     with allure.step("We log in on behalf of the laboratory assistant"):
         lab_page.login_to_the_page()
 

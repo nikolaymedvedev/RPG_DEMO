@@ -26,3 +26,6 @@ def open_browser_firefox():
     option = webdriver.FirefoxOptions()
     option.add_argument("--headless")
     browser = webdriver.Firefox(options=None, executable_path=GeckoDriverManager().install())
+    browser.implicitly_wait(10)
+    yield browser
+    browser.quit()
