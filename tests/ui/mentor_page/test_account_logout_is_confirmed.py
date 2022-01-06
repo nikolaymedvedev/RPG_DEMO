@@ -1,4 +1,3 @@
-import time
 import allure
 from app.ui.modules.mentor.mentor_page import MentorPage
 

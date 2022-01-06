@@ -3,11 +3,9 @@ from app.ui.modules.authorization.authorization_page import Authorization_page
 from configs.base_users_for_ui_and_api_tests import base_mentor_user
 from framework.utils import asserts
 from selenium.webdriver.common.by import By
-import time
 
 
 class MentorPage(Authorization_page):
-
 
     def login_mentor_page(self, login=base_mentor_user["username"],
                           password=base_mentor_user["password"]
@@ -15,7 +13,6 @@ class MentorPage(Authorization_page):
         self.input_login(login)
         self.input_password(password)
         self.click_enter_button()
-
 
     def find_mentor_name(self):
         mentor_name = self.wait_element_located(*MentorPageLocators.LOCATOR_MENTOR_NAME)
@@ -92,9 +89,7 @@ class MentorPage(Authorization_page):
     def find_feedback_area(self):
         laborant_feedback = self.wait_element_located(
             *MentorPageLocators.LOCATOR_FIRST_LABORANT_INFO_FEEDBACK_TEXTAREA).send_keys("Добавлять не будем, "
-                                                                                         "просто проверяем, "
-                                                                                         "что работает")
-
+                                                                                         "просто проверяем, что работает")
     def cancel_feedback_adding(self):
         laborant_feedback_cancel = self.wait_element_located(
             *MentorPageLocators.LOCATOR_FIRST_LABORANT_INFO_FEEDBACK_CANCEL).click()
