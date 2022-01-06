@@ -20,9 +20,12 @@ class AuthorizationPageLocators:
     LOCATOR_BUTTON_LINK_FIELD = (By.XPATH, "//div/div[2]/label")
     LOCATOR_CHECK_BUTTON = (By.TAG_NAME, "button")
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 1248650c60219d60cc311f70d11ef625cc6e1ca1
+=======
+>>>>>>> ce01e640d418c36e549b5b8a4f02106d5c2d338c
     LOCATOR_CHECK_MAIL_INPUT_FIELD = (By.XPATH, "//input[@name='email']")
     LOCATOR_BUTTON_SEND_EMAIL = (By.XPATH, "//form/div/button")
     LOCATOR_EMAIL_FIELD_NAME = (By.CSS_SELECTOR, ".Inputelements__InputMessage-sc-1fyahir-7.fVxNmY")
@@ -30,9 +33,12 @@ class AuthorizationPageLocators:
                                                "//div[@class='WhiteRectangleelements__SVGClose-sc-jonks8-3 hQMJid']"
                                                )
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 
 
 >>>>>>> develop
 >>>>>>> 1248650c60219d60cc311f70d11ef625cc6e1ca1
+=======
+>>>>>>> ce01e640d418c36e549b5b8a4f02106d5c2d338c

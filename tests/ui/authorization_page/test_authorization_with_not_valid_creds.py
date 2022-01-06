@@ -25,8 +25,12 @@ def test_authorization_with_not_valid_creds(open_browser_chrome, logger):
     with allure.step("Input non-valid 'password'"):
         auth_page.input_login(base_laborant_user["username"])
 <<<<<<< HEAD
+<<<<<<< HEAD
         auth_page.input_password("invmpassword")
 =======
+=======
+        auth_page.input_password("invmpassword")
+>>>>>>> ce01e640d418c36e549b5b8a4f02106d5c2d338c
         auth_page.input_password("invalidpassw")
 >>>>>>> 1248650c60219d60cc311f70d11ef625cc6e1ca1
         auth_page.click_enter_button()
