@@ -40,3 +40,6 @@ def test_account_logout_is_confirmed(open_browser_chrome, logger):
     with allure.step("Cancel adding feedback"):
         mentor_page.cancel_feedback_adding()
 
+    with allure.step("Back to the main page"):
+        mentor_page.find_personal_room_button()
+
