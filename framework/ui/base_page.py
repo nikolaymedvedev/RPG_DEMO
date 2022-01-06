@@ -36,3 +36,9 @@ class BasePage:
             EC.url_to_be(url)
         )
         return button
+
+    def text_to_be_present_in_element(self, find_by: object, locator: object, text: str, timeout: object = 15) -> object:
+        element = WebDriverWait(self.browser, timeout).until(
+            EC.text_to_be_present_in_element((find_by, locator), text)
+        )
+        return element
