@@ -29,3 +29,4 @@ def open_browser_firefox():
     browser.implicitly_wait(10)
     yield browser
     browser.quit()
+
