@@ -22,6 +22,15 @@ class MentorPageLocators:
     LOCATOR_BUTTON_QUIT_YES = (By.XPATH, "//button[text()='Да']")
     LOCATOR_BUTTON_QUIT_NO = (By.XPATH, "//button[text()='Нет']")
 
+
+    LOCATOR_FIRST_LABORANT_MENU = (By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[1]/td["
+                                             "7]/div/div[1]")
+    LOCATOR_FIRST_LABORANT_MENU_COMPLETE_THE_LAB = (By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div["
+                                                              "2]/table/tbody/tr[1]/td[7]/div/div[2]/div/div[1]")
+    LOCATOR_FIRST_LABORANT_MENU_COMPLETE_ASSIGN_AN_EXAM = (By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div["
+                                                                     "2]/table/tbody/tr[1]/td[7]/div/div[2]/div/div["
+                                                                     "2]")
+
     LOCATOR_FIRST_LABORANT = (By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[2]")
     LOCATOR_FIRST_LABORANT_TIMELINE = (By.XPATH, "//div[contains(text(),'Timeline')]")
     LOCATOR_FIRST_LABORANT_PROJECT = (By.XPATH, "//div[contains(text(),'Проект')]")

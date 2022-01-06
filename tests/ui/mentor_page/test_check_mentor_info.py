@@ -27,3 +27,4 @@ def test_check_mentor_info(open_browser_chrome, logger):
 
     with allure.step("Find mentor's Skype"):
         mentor_page.find_mentor_skype()
+
