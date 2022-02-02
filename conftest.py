@@ -29,3 +29,16 @@ def open_browser_firefox():
     browser.implicitly_wait(10)
     yield browser
     browser.quit()
+    
+    
+@pytest.fixture(scope="function",
+                params=[webdriver.Firefox(executable_path=GeckoDriverManager().install()),
+                        webdriver.Chrome(executable_path=ChromeDriverManager().install())],
+                ids=["Mazila",
+                     "Chrome"]
+                )
+def open_browser_factory(request):
+    browsers = request.param
+    browsers.implicitly_wait(10)
+    yield browsers
+    browsers.quit()
